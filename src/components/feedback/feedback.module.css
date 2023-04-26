@@ -2,3 +2,35 @@
     padding: 15px;
     margin: 0 auto;
 }
+
+.feedback {
+   text-decoration: dashed;
+   margin-top: 15px;
+}
+
+.statistics {
+    margin-top: 15px;
+}
+
+.feedback__title {
+    margin-bottom: 15px;
+}
+
+button {
+    min-width: 60px;
+    min-height: 30px;
+
+    background-color: #fff;
+
+    border: 2px solid lightgray;
+    border-radius: 4px;
+}
+button:hover,
+button:focus {
+    background-color: lightblue;
+}
+
+.buttons__wrapper {
+    display: flex;
+    gap: 10px;
+}
