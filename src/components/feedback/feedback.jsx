@@ -1,5 +1,5 @@
 import React from 'react';
-import css from './feedback.module.css';
+import css from './Feedback.module.css';
 
 import { Controls } from './Controls';
 import { StatisticsList } from './StatisticsList';
@@ -37,23 +37,17 @@ export class Feedback extends React.Component {
   render() {
     return (
       <div className={css.feedback__wrapper}>
-        <div className={css.feedback}>
-          <h1 className={css.feedback__title}>Please leave feedback</h1>
-          <Controls
-            handleClickOnGood={this.handleClickOnGood}
-            handleClickOnNeutral={this.handleClickOnNeutral}
-            handleClickOnBad={this.handleClickOnBad}
-          />
-        </div>
-        <div className={css.statistics}>
-          <h2 className={css.statistics__title}>Statistics</h2>
+        <Controls
+          handleClickOnGood={this.handleClickOnGood}
+          handleClickOnNeutral={this.handleClickOnNeutral}
+          handleClickOnBad={this.handleClickOnBad}
+        />
 
-          <StatisticsList
-            stateGood={this.state.good}
-            stateNeutral={this.state.neutral}
-            stateBad={this.state.bad}
-          />
-        </div>
+        <StatisticsList
+          stateGood={this.state.good}
+          stateNeutral={this.state.neutral}
+          stateBad={this.state.bad}
+        />
       </div>
     );
   }

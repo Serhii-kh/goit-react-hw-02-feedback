@@ -1,11 +1,12 @@
-import css from './feedback.module.css';
+import css from './Feedback.module.css';
 
-export const Controls = (
-{  handleClickOnGood,
+export const Controls = ({
+  handleClickOnGood,
   handleClickOnNeutral,
-  handleClickOnBad}
-) => {
-  return (
+  handleClickOnBad,
+}) => (
+  <div className={css.feedback}>
+    <h1 className={css.feedback__title}>Please leave feedback</h1>
     <div className={css.controls}>
       <button type="button" onClick={handleClickOnGood}>
         Good
@@ -17,5 +18,5 @@ export const Controls = (
         Bad
       </button>
     </div>
-  );
-};
+  </div>
+);

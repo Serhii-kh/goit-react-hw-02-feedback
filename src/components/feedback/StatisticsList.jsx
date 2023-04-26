@@ -1,7 +1,8 @@
-import css from './feedback.module.css'
+import css from './Feedback.module.css';
 
-export const StatisticsList = ({ stateGood, stateBad, stateNeutral }) => {
-  return (
+export const StatisticsList = ({ stateGood, stateBad, stateNeutral }) => (
+  <div className={css.statistics}>
+    <h2 className={css.statistics__title}>Statistics</h2>
     <ul className={css.statistics__list}>
       <li className={css.statistics__item}>
         {' '}
@@ -34,12 +35,9 @@ export const StatisticsList = ({ stateGood, stateBad, stateNeutral }) => {
         {' '}
         <p>
           Positive feedback:
-          <span className={css.statistics__positive}>
-            {' '}
-            {0}
-          </span>
+          <span className={css.statistics__positive}> {0}</span>
         </p>
       </li>
     </ul>
-  );
-};
+  </div>
+);
