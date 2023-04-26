@@ -1,11 +1,17 @@
 import React from 'react';
 import css from './feedback.module.css';
 
+import { Controls } from './Controls';
+import { StatisticsList } from './StatisticsList';
+
 export class Feedback extends React.Component {
+  static defaultProps = {};
+  static propTypes = {};
+
   state = {
-    good: 3,
-    neutral: 2,
-    bad: 2,
+    good: 0,
+    neutral: 0,
+    bad: 0,
   };
 
   handleClickOnGood = () => {
@@ -33,62 +39,20 @@ export class Feedback extends React.Component {
       <div className={css.feedback__wrapper}>
         <div className={css.feedback}>
           <h1 className={css.feedback__title}>Please leave feedback</h1>
-          <div className={css.buttons__wrapper}>
-            <button type="button" onClick={this.handleClickOnGood}>
-              Good
-            </button>
-            <button type="button" onClick={this.handleClickOnNeutral}>
-              Neutral
-            </button>
-            <button type="button" onClick={this.handleClickOnBad}>
-              Bad
-            </button>
-          </div>
+          <Controls
+            handleClickOnGood={this.handleClickOnGood}
+            handleClickOnNeutral={this.handleClickOnNeutral}
+            handleClickOnBad={this.handleClickOnBad}
+          />
         </div>
         <div className={css.statistics}>
           <h2 className={css.statistics__title}>Statistics</h2>
-          <ul className={css.statistics__list}>
-            <li className={css.statistics__item}>
-              {' '}
-              <p>
-                Good:
-                <span className={css.statistics__good}> {this.state.good}</span>
-              </p>
-            </li>
-            <li className={css.statistics__item}>
-              {' '}
-              <p>
-                Neutral:
-                <span className={css.statistics__neutral}>
-                  {' '}
-                  {this.state.neutral}
-                </span>
-              </p>
-            </li>
-            <li className={css.statistics__item}>
-              {' '}
-              <p>
-                Bad:
-                <span className={css.statistics__bad}> {this.state.bad}</span>
-              </p>
-            </li>
-            <li className={css.statistics__item}>
-              <p>
-                Total:
-                <span className={css.statistics__total}> {this.total}</span>
-              </p>
-            </li>
-            <li className={css.statistics__item}>
-              {' '}
-              <p>
-                Positive feedback:
-                <span className={css.statistics__positive}>
-                  {' '}
-                  {this.state.positive}
-                </span>
-              </p>
-            </li>
-          </ul>
+
+          <StatisticsList
+            stateGood={this.state.good}
+            stateNeutral={this.state.neutral}
+            stateBad={this.state.bad}
+          />
         </div>
       </div>
     );
