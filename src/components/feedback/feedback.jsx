@@ -8,13 +8,23 @@ export class Feedback extends React.Component {
     bad: 2,
   };
 
-  handleClickOnGood = () => {};
+  handleClickOnGood = () => {
+    this.setState(prevState => ({ good: prevState.good + 1 }));
+  };
 
-  handleClickOnNeutral = () => {};
+  handleClickOnNeutral = () => {
+    this.setState(prevState => ({ neutral: prevState.neutral + 1 }));
+  };
 
-  handleClickOnBad = () => {};
+  handleClickOnBad = () => {
+    this.setState(prevState => ({ bad: prevState.bad + 1 }));
+  };
 
-  countTotalFeedback() {}
+  countTotalFeedback() {
+    this.setState(prevState => ({
+      total: prevState.good + prevState.neutral + prevState.bad,
+    }));
+  }
 
   countPositiveFeedbackPercentage() {}
 
