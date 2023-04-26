@@ -3,10 +3,20 @@ import css from './feedback.module.css';
 
 export class Feedback extends React.Component {
   state = {
-    good: 0,
-    neutral: 0,
-    bad: 0,
+    good: 3,
+    neutral: 2,
+    bad: 2,
   };
+
+  handleClickOnGood = () => {};
+
+  handleClickOnNeutral = () => {};
+
+  handleClickOnBad = () => {};
+
+  countTotalFeedback() {}
+
+  countPositiveFeedbackPercentage() {}
 
   render() {
     return (
@@ -14,33 +24,61 @@ export class Feedback extends React.Component {
         <div className={css.feedback}>
           <h1 className={css.feedback__title}>Please leave feedback</h1>
           <div className={css.buttons__wrapper}>
-            <button type="button">Good</button>
-            <button type="button">Neutral</button>
-            <button type="button">Bad</button>
+            <button type="button" onClick={this.handleClickOnGood}>
+              Good
+            </button>
+            <button type="button" onClick={this.handleClickOnNeutral}>
+              Neutral
+            </button>
+            <button type="button" onClick={this.handleClickOnBad}>
+              Bad
+            </button>
           </div>
         </div>
         <div className={css.statistics}>
           <h2 className={css.statistics__title}>Statistics</h2>
-          <p>
-            Good:
-            <span className={css.statistics__good}></span>
-          </p>
-          <p>
-            Neutral:
-            <span className={css.statistics__neutral}></span>
-          </p>
-          <p>
-            Bad:
-            <span className={css.statistics__bad}></span>
-          </p>
-          <p>
-            Total:
-            <span className={css.statistics__total}></span>
-          </p>
-          <p>
-            Positive feedback:
-            <span className={css.statistics__positive}></span>
-          </p>
+          <ul className={css.statistics__list}>
+            <li className={css.statistics__item}>
+              {' '}
+              <p>
+                Good:
+                <span className={css.statistics__good}> {this.state.good}</span>
+              </p>
+            </li>
+            <li className={css.statistics__item}>
+              {' '}
+              <p>
+                Neutral:
+                <span className={css.statistics__neutral}>
+                  {' '}
+                  {this.state.neutral}
+                </span>
+              </p>
+            </li>
+            <li className={css.statistics__item}>
+              {' '}
+              <p>
+                Bad:
+                <span className={css.statistics__bad}> {this.state.bad}</span>
+              </p>
+            </li>
+            <li className={css.statistics__item}>
+              <p>
+                Total:
+                <span className={css.statistics__total}> {this.total}</span>
+              </p>
+            </li>
+            <li className={css.statistics__item}>
+              {' '}
+              <p>
+                Positive feedback:
+                <span className={css.statistics__positive}>
+                  {' '}
+                  {this.state.positive}
+                </span>
+              </p>
+            </li>
+          </ul>
         </div>
       </div>
     );

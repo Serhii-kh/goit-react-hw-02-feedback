@@ -1,36 +1,48 @@
 .feedback__wrapper {
-    padding: 15px;
-    margin: 0 auto;
+  padding: 15px;
+  margin: 0 auto;
 }
 
 .feedback {
-   text-decoration: dashed;
-   margin-top: 15px;
-}
-
-.statistics {
-    margin-top: 15px;
+  text-decoration: dashed;
+  margin-top: 15px;
 }
 
 .feedback__title {
-    margin-bottom: 15px;
+  margin-bottom: 15px;
+}
+
+.statistics {
+  margin-top: 15px;
+}
+
+.statistics__list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  margin-top: 15px;
+}
+
+.statistics__item {
+  text-decoration: none;
 }
 
 button {
-    min-width: 60px;
-    min-height: 30px;
+  min-width: 60px;
+  min-height: 30px;
 
-    background-color: #fff;
+  background-color: #fff;
 
-    border: 2px solid lightgray;
-    border-radius: 4px;
+  border: 2px solid lightgray;
+  border-radius: 4px;
 }
-button:hover,
-button:focus {
-    background-color: lightblue;
+
+button:hover {
+  background-color: lightblue;
 }
 
 .buttons__wrapper {
-    display: flex;
-    gap: 10px;
+  display: flex;
+  gap: 10px;
 }
