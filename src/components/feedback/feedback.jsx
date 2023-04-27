@@ -8,17 +8,17 @@ import { Section } from './Section';
 import { Notification } from './Notification';
 
 export class Feedback extends React.Component {
+  state = {
+    good: 0,
+    neutral: 0,
+    bad: 0,
+  };
+
   static defaultProps = {};
   static propTypes = {
     stateGood: PropTypes.number,
     stateBad: PropTypes.number,
     stateNeutral: PropTypes.number,
-  };
-
-  state = {
-    good: 0,
-    neutral: 0,
-    bad: 0,
   };
 
   handleClickOnGood = () => {
