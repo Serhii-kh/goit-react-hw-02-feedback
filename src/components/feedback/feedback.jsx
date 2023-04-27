@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 
 import { FeedbackOptions } from './FeedbackOptions';
 import { Statistics } from './Statistics';
+import { Section } from './Section';
 
 export class Feedback extends React.Component {
   static defaultProps = {};
@@ -49,19 +50,21 @@ export class Feedback extends React.Component {
 
     return (
       <div className={css.feedback__wrapper}>
-        <FeedbackOptions
-          handleClickOnGood={this.handleClickOnGood}
-          handleClickOnNeutral={this.handleClickOnNeutral}
-          handleClickOnBad={this.handleClickOnBad}
-        />
+        <Section title={'Please leave feedback'}>
+          <FeedbackOptions
+            handleClickOnGood={this.handleClickOnGood}
+            handleClickOnNeutral={this.handleClickOnNeutral}
+            handleClickOnBad={this.handleClickOnBad}
+          />
+        </Section>
 
-        <Statistics
-          stateGood={this.state.good}
-          stateNeutral={this.state.neutral}
-          stateBad={this.state.bad}
-          totalFeedback={totalFeedback}
-          positivePercentage={positivePercentage}
-        />
+        <Statistics>
+          <Section title={'Good: '}>{this.state.good}</Section>
+          <Section title={'Neutral: '}>{this.state.neutral}</Section>
+          <Section title={'Bad: '}>{this.state.bad}</Section>
+          <Section title={'Total: '}>{totalFeedback}</Section>
+          <Section title={'Positive feedback: '}>{positivePercentage}</Section>
+        </Statistics>
       </div>
     );
   }
