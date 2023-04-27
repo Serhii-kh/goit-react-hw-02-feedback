@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import { FeedbackOptions } from './FeedbackOptions';
 import { Statistics } from './Statistics';
 import { Section } from './Section';
+import { Notification } from './Notification';
 
 export class Feedback extends React.Component {
   static defaultProps = {};
@@ -58,13 +59,27 @@ export class Feedback extends React.Component {
           />
         </Section>
 
-        <Statistics>
-          <Section title={'Good: '}>{this.state.good}</Section>
-          <Section title={'Neutral: '}>{this.state.neutral}</Section>
-          <Section title={'Bad: '}>{this.state.bad}</Section>
-          <Section title={'Total: '}>{totalFeedback}</Section>
-          <Section title={'Positive feedback: '}>{positivePercentage}</Section>
-        </Statistics>
+        {this.state.good > 0 ? (
+          <Statistics>
+            <Section title={'Good: '}>
+              <p>{this.state.good}</p>
+            </Section>
+            <Section title={'Neutral: '}>
+              <p>{this.state.neutral}</p>
+            </Section>
+            <Section title={'Bad: '}>
+              <p>{this.state.bad}</p>
+            </Section>
+            <Section title={'Total: '}>
+              <p>{totalFeedback}</p>{' '}
+            </Section>
+            <Section title={'Positive feedback: '}>
+              <p>{positivePercentage}</p>
+            </Section>
+          </Statistics>
+        ) : (
+          <Notification message={'There is no feedback'} />
+        )}
       </div>
     );
   }
