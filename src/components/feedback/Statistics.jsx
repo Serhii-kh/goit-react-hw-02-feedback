@@ -1,6 +1,6 @@
 import css from './Feedback.module.css';
 
-export const StatisticsList = ({
+export const Statistics = ({
   stateGood,
   stateBad,
   stateNeutral,

@@ -1,6 +1,6 @@
 import css from './Feedback.module.css';
 
-export const Controls = ({
+export const FeedbackOptions = ({
   handleClickOnGood,
   handleClickOnNeutral,
   handleClickOnBad,

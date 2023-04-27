@@ -1,8 +1,8 @@
 import React from 'react';
 import css from './Feedback.module.css';
 
-import { Controls } from './Controls';
-import { StatisticsList } from './StatisticsList';
+import { FeedbackOptions } from './FeedbackOptions';
+import { Statistics } from './Statistics';
 
 export class Feedback extends React.Component {
   static defaultProps = {};
@@ -32,8 +32,9 @@ export class Feedback extends React.Component {
   }
 
   countPositiveFeedbackPercentage() {
-    const positivePercentage =
-      (this.state.good / this.countTotalFeedback()) * 100;
+    const positivePercentage = Math.round(
+      (this.state.good / this.countTotalFeedback()) * 100
+    );
     return positivePercentage;
   }
 
@@ -43,13 +44,13 @@ export class Feedback extends React.Component {
 
     return (
       <div className={css.feedback__wrapper}>
-        <Controls
+        <FeedbackOptions
           handleClickOnGood={this.handleClickOnGood}
           handleClickOnNeutral={this.handleClickOnNeutral}
           handleClickOnBad={this.handleClickOnBad}
         />
 
-        <StatisticsList
+        <Statistics
           stateGood={this.state.good}
           stateNeutral={this.state.neutral}
           stateBad={this.state.bad}
