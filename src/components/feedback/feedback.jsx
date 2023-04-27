@@ -1,12 +1,17 @@
 import React from 'react';
 import css from './Feedback.module.css';
+import PropTypes from 'prop-types';
 
 import { FeedbackOptions } from './FeedbackOptions';
 import { Statistics } from './Statistics';
 
 export class Feedback extends React.Component {
   static defaultProps = {};
-  static propTypes = {};
+  static propTypes = {
+    stateGood: PropTypes.number,
+    stateBad: PropTypes.number,
+    stateNeutral: PropTypes.number,
+  };
 
   state = {
     good: 0,
