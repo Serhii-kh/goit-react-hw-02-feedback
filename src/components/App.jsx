@@ -24,7 +24,7 @@ export class App extends Component {
   handleClickOnGood = (e) => {
 		this.setState(prevState => ({ good: prevState.good + 1 }));
 		
-		console.log(e);
+		// console.log(e.target);
   };
 
   handleClickOnNeutral = () => {
@@ -44,7 +44,7 @@ export class App extends Component {
 		const { good } = this.state;
     const positivePercentage = Math.round(
       (good / this.countTotalFeedback()) * 100
-    );
+    ) ;
     return positivePercentage;
   }
 
