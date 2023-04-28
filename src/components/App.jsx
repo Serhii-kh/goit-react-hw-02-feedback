@@ -24,7 +24,6 @@ export class App extends Component {
   handleClickOnGood = (e) => {
 		this.setState(prevState => ({ good: prevState.good + 1 }));
 		
-		// console.log(e.target);
   };
 
   handleClickOnNeutral = () => {
