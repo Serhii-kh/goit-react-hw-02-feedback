@@ -5,7 +5,7 @@ export const FeedbackOptions = ({ options, onLeaveFeedback }) => (
 	<div className={css.controls}>
 		{
 			options.map((option) =>
-				<button type="button" name={option} onClick={onLeaveFeedback}>{option}
+				<button type="button" key={option} name={option} onClick={onLeaveFeedback}>{option}
 				</button>
 			)
 		}
