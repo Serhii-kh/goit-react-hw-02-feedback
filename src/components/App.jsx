@@ -13,30 +13,30 @@ export class App extends Component {
 
 	onLeaveFeedback = (e) => {
 		const name = e.target.name;
+	
 		this.setState(prevState => ({ [name]: prevState[name] + 1 }));
 
 	};
 
 	countTotalFeedback() {
 		const { good, neutral, bad } = this.state;
-
 		const totalFeedback = good + bad + neutral;
+
 		return totalFeedback;
 	}
 
 	countPositiveFeedbackPercentage() {
 		const { good } = this.state;
-
 		const positivePercentage = Math.round(
 			(good / this.countTotalFeedback()) * 100
 		);
+
 		return positivePercentage;
 	}
 
 	render() {
 		const { good, neutral, bad } = this.state;
 		const KEYS = Object.keys(this.state);
-
 		const totalFeedback = this.countTotalFeedback();
 		const positivePercentage = this.countPositiveFeedbackPercentage();
 
