@@ -1,4 +1,4 @@
-import css from './Feedback.module.css';
+import css from '../Notification/Notification.module.css';
 import PropTypes from 'prop-types';
 
 export const Notification = ({ message }) => (

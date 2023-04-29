@@ -1,4 +1,4 @@
-import css from './Feedback.module.css';
+import css from '../FeedbackOptions/FeedbackOptions.module.css';
 
 export const FeedbackOptions = ({
   handleClickOnGood,
