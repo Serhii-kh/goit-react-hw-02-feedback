@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import css from './FeedbackOptions/FeedbackOptions.module.css';
 import PropTypes from 'prop-types';
 
 import { FeedbackOptions } from './FeedbackOptions/FeedbackOptions';
@@ -54,7 +53,7 @@ export class App extends Component {
     const positivePercentage = this.countPositiveFeedbackPercentage();
 
     return (
-      <div className={css.feedback__wrapper}>
+      <>
         <Section title={'Please leave feedback'}>
           <FeedbackOptions
             handleClickOnGood={this.handleClickOnGood}
@@ -64,27 +63,18 @@ export class App extends Component {
         </Section>
 
         {totalFeedback !== 0 ? (
-          <Statistics>
-            <Section title={'Good: '}>
-              <p>{good}</p>
-            </Section>
-            <Section title={'Neutral: '}>
-              <p>{neutral}</p>
-            </Section>
-            <Section title={'Bad: '}>
-              <p>{bad}</p>
-            </Section>
-            <Section title={'Total: '}>
-              <p>{totalFeedback}</p>{' '}
-            </Section>
-            <Section title={'Positive feedback: '}>
-              <p>{positivePercentage}</p>
-            </Section>
-          </Statistics>
+					<Section title={'Statistics'}>
+						<Statistics
+						good={good}
+						neutral={neutral}
+						bad={bad}
+						total={totalFeedback}
+						positivePercentage={positivePercentage} />
+					</Section>
         ) : (
           <Notification message={'There is no feedback'} />
-        )}
-      </div>
-    );
-  }
+				)}
+     </>
+				);
+  }	
 }
