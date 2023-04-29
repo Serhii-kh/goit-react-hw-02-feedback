@@ -20,18 +20,12 @@ export class App extends Component {
     stateNeutral: PropTypes.number,
   };
 
-  handleClickOnGood = (e) => {
-		this.setState(prevState => ({ good: prevState.good + 1 }));
+  onLeaveFeedback = (e) => {
+		   this.setState(prevState => ({ name: prevState.name + 1 }));
 		
   };
 
-  handleClickOnNeutral = () => {
-    this.setState(prevState => ({ neutral: prevState.neutral + 1 }));
-  };
-
-  handleClickOnBad = () => {
-    this.setState(prevState => ({ bad: prevState.bad + 1 }));
-  };
+  
 
   countTotalFeedback() {
     const totalFeedback = this.state.good + this.state.bad + this.state.neutral;
